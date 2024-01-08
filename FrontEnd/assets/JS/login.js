@@ -1,21 +1,21 @@
-let loginform = document.getElementById("loginform");
+let loginform = document.getElementById("loginForm");
 
 
  function redirectionAccueil(){
-    document.location.href = "./index.htlm"
+    document.location.href = "./index.html"
 }
 
 loginform.addEventListener("submit", async function(event){
     event.preventDefault();
 
-    const emailValue = document.getElementById("email").value;
-    const passwordValue = document.getElementById("password").value;
-    const logs = {emailValue,passwordValue};
-    
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const logs = {email,password};
+    console.log(logs, "hello")
     // Envoi des logs
     const response = await fetch(" http://localhost:5678/api/users/login",{
         method:"POST",
-        headers: {"Content-type" : "application/json",},
+        headers: {"Content-type" : "application/json"},
         body: JSON.stringify(logs),
     })
 

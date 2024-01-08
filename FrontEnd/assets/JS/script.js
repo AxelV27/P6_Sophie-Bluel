@@ -32,7 +32,7 @@ async function gallerie(filterWorks = null) {
          gallerie();
         } else {
           const filtersWorks = works.filter(function(work) {
-            return work.categoriesId === categorie.id; 
+            return work.categoryId === categorie.id; 
           });
           document.querySelector(".gallery").innerHTML = "";
          gallerie(filtersWorks);
@@ -45,7 +45,7 @@ async function gallerie(filterWorks = null) {
     sectiongallerie.innerHTML = ""; // Réinitialise la galerie
   
     const worksToDisplay = filterWorks || works; // Utilise les travaux filtrés s'ils existent
-  
+   console.log(worksToDisplay, "Hello, World")
     for (let i = 0; i < worksToDisplay.length; i++) {
       const work = worksToDisplay[i];
   

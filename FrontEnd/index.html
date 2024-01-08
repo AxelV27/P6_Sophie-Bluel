@@ -8,10 +8,54 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
+	<script src="https://kit.fontawesome.com/07f80e54ae.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./assets/JS/script.js"></script>
 </head>
 <body>
+
+	<div class="modal">
+			<div class="modal__content">
+				<div class="modal-close">
+					<button class="modal-close-button"><i class="fa-regular fa-circle-xmark"></i></button>
+				</div>
+				<div class="modal__gallery">
+					<h3>Galerie photos</h3>
+					<div class="modal__gallery-grid"></div>
+				</div>
+			
+			<hr>
+			<button class="add-photo">Ajouter une photo</button>
+			<br>
+			</div>
+		<div class="modal__form__content">
+			<div class="return-and-close-modal">
+			<button class="return-modal"><i class="fa-solid fa-arrow-left"></i></button>
+			<button class="close-modal-button"><i class="fa-regular fa-circle-xmark"></i></button>
+			</div>
+		
+			<div class="modal__form">
+				<h3>Ajout photo</h3>
+				<form>
+					<div class="add-projet-photo">
+						<i class="fa-regular fa-image add-projet-photo-icon"></i>
+						<label for="add-projet-photo-input" class="add-projet-photo-button">+ Ajouter photo</label>
+						<input type="file" name="add-projet-photo-input" id="add-projet-photo-input" required accept=".jpg, .png">
+						<p class="add-projet-photo-description">jpg, png : 4mo max</p>
+					</div>
+					<label for="titre__projet">Titre</label>
+					<input type="text" name="titre__projet" id="titre__projet" required>
+					<label for="categorie__projet">Catégorie</label>
+					<select name="categorie__projet" id="categorie__projet" required>
+						<option value=""></option>
+
+					</select>
+					<hr>
+					<button class="valider__form">Valider</button>
+				</form>
+			</div>
+		</div>
+	</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
@@ -37,6 +81,7 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
+		<button class="edit-mode open-modal"><i class="fa-regular fa-pen-to-square"></i>modifier</button>
 		<div class="filtre__categories"></div>
 		<div class="gallery">
 	</section>
