@@ -187,7 +187,35 @@ footer nav ul {
 }
 
 /*** Ajout du css ***/
+button{
+	background-color: #FFFEF8;
+	border: none;
+	font-family: "Work sans";
+	font-size: 14px;
+	padding: 10px 0 10px 0;
+	cursor: pointer;
+}
 
+/*** Mode édition ***/
+.authentifier{
+	display: none;
+	height: 60px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	background-color: #000000;
+	color: #FFFFFF;
+}
+
+.button-edit{
+	background-color: #000000;
+	color: #ffffff;
+	height: 38px;
+	padding: 0 15px 0 15px;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: "Work Sans";
+}
 
 /*** Modal ***/
 .modal{
@@ -210,7 +238,6 @@ footer nav ul {
 	position: absolute;
 	box-sizing: border-box;
 	width: 630px;
-	height: 730px;
 	overflow: auto;
 	background-color: #ffffff;
 	color: #000000;
@@ -224,7 +251,6 @@ footer nav ul {
 	position: absolute;
 	box-sizing: border-box;
 	width: 630px;
-	height: 730px;
 	overflow: auto;
 	background-color: #ffffff;
 	color: #000000;
@@ -262,6 +288,24 @@ footer nav ul {
 	position: relative;
 }
 
+.button__surprime{
+	position: absolute;
+	top: 6px;
+	right: 12px;
+	z-index: 1;
+	background-color: #000000;
+	color: #FFFFFF;
+	border-radius: 2px;
+	height: 20px;
+	width: 18px;
+	padding: 0;
+}
+
+.button__surprime i {
+	font-size: 10px;
+	margin: 0;
+}
+
 h3{
 	font-family: "Work sans";
 	font-size: 26px;
@@ -278,9 +322,59 @@ h3{
 	font-weight: 700;
 	font-size: 14px;
 	height: 36px;
-	width: 237px;
 	padding: 0 20px 0 20px;
 	margin-top: 25px;
+}
+ /* ajout photo*/
+.modal__form{
+	width: 72%;
+	height: auto;
+	text-align: center;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+}
+
+form label {
+	text-align: left;
+}
+
+.return-and-close-modal{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.add-projet-photo{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 169px;
+	background-color: #E8F1F6;
+	border-radius: 3px;
+	text-align: center;
+	margin-top: 36px;
+}
+
+.add-projet-photo-icon{
+	font-size: 58px;
+	color: #B9C5CC;
+}
+
+/*** Titre mes projets ***/
+.portfolio__title{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	gap: 20px
+}
+
+.portfolio__title button{
+	margin-bottom: 25px;
 }
 
 /*** Filtre ***/

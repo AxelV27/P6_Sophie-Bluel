@@ -13,6 +13,10 @@
 	<script src="./assets/JS/script.js"></script>
 </head>
 <body>
+	<div class="authentifier mode-edition">
+		<button class="open-modal button-edit"><i class="fa-regular fa-pen-to-square"></i></button>
+		<p>Mode édition</p>
+	</div>
 
 	<div class="modal">
 			<div class="modal__content">
@@ -23,15 +27,14 @@
 					<h3>Galerie photos</h3>
 					<div class="modal__gallery-grid"></div>
 				</div>
-			
-			<hr>
-			<button class="add-photo">Ajouter une photo</button>
-			<br>
+				<hr>
+				<button class="add-photo">Ajouter une photo</button>
+				<br>
 			</div>
 		<div class="modal__form__content">
 			<div class="return-and-close-modal">
 			<button class="return-modal"><i class="fa-solid fa-arrow-left"></i></button>
-			<button class="close-modal-button"><i class="fa-regular fa-circle-xmark"></i></button>
+			<button class="modal-close-button"><i class="fa-regular fa-circle-xmark"></i></button>
 			</div>
 		
 			<div class="modal__form">
@@ -48,7 +51,6 @@
 					<label for="categorie__projet">Catégorie</label>
 					<select name="categorie__projet" id="categorie__projet" required>
 						<option value=""></option>
-
 					</select>
 					<hr>
 					<button class="valider__form">Valider</button>
@@ -80,8 +82,10 @@
 		</article>
 	</section>
 	<section id="portfolio">
+		<div class="portfolio__title">
 		<h2>Mes Projets</h2>
-		<button class="edit-mode open-modal"><i class="fa-regular fa-pen-to-square"></i>modifier</button>
+		<button class="open-modal mode-edition"><i class="fa-regular fa-pen-to-square"></i>modifier</button>
+		</div>
 		<div class="filtre__categories"></div>
 		<div class="gallery">
 	</section>
@@ -108,4 +112,5 @@
 	</nav>
 </footer>
 </body>
+<script src="./assets/JS/modal.js"></script>
 </html>
