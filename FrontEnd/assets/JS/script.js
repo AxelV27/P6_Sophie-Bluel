@@ -72,6 +72,19 @@ async function gallerie(filterWorks = null) {
   
   gallerie();
 
+  const login = document.querySelector(".login")
+  if(token){
+    login.innerHTML = ""
+    const logout = document.createElement("a")
+    logout.innerHTML = "logout"
+    logout.className = "logout"
+    modeEdition()
+  }
 
+logout.addEventListener("click", function(){
+  document.location.href = "./login.html"
+  localStorage.removeItem("token")
+  location.reload()
+})
 
 
