@@ -196,6 +196,10 @@ button{
 	cursor: pointer;
 }
 
+a{
+	text-decoration: none;
+}
+
 /*** Mode édition ***/
 .authentifier{
 	display: none;
@@ -359,6 +363,10 @@ form label {
 	margin-top: 36px;
 }
 
+.add-projet-photo img {
+	height: 100%;
+}
+
 .add-projet-photo-icon{
 	font-size: 58px;
 	color: #B9C5CC;
@@ -375,6 +383,7 @@ form label {
 }
 
 .portfolio__title button{
+	display: none;
 	margin-bottom: 25px;
 }
 

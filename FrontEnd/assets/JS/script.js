@@ -1,3 +1,4 @@
+
 // Génaration gallerie + catégorie
 async function gallerie(filterWorks = null) {
     // Récupération des travaux
@@ -45,7 +46,7 @@ async function gallerie(filterWorks = null) {
     sectiongallerie.innerHTML = ""; // Réinitialise la galerie
   
     const worksToDisplay = filterWorks || works; // Utilise les travaux filtrés s'ils existent
-   console.log(worksToDisplay, "Hello, World")
+   //console.log(worksToDisplay, "Hello, World")
     for (let i = 0; i < worksToDisplay.length; i++) {
       const work = worksToDisplay[i];
   
@@ -72,19 +73,36 @@ async function gallerie(filterWorks = null) {
   
   gallerie();
 
-  const login = document.querySelector(".login")
+  // Login/logout
+const login = localStorage.getItem("token")
+// Vérifie l'état de login
+const UtilisateurConnecte = login != null && login != undefined && login != ''
+
+// Passage en mode édition
+if(UtilisateurConnecte){
+  const logout = document.querySelector(".login")
+  const ModeEdition = document.querySelector(".mode-edition")
+  logout.textContent = "logout"
+  ModeEdition.style.display = "flex"
+  const modifieButton = document.querySelector(".edition-mode")
+  modifieButton.style.display = "flex"
+  logout.addEventListener('click',Deconnexion)
+}
+
+// Fonction de déconnexion
+function Deconnexion(){
+  localStorage.clear()
+  window.location.reload()
+}
+  /*const login = document.querySelector(".login")
   if(token){
-    login.innerHTML = ""
-    const logout = document.createElement("a")
-    logout.innerHTML = "logout"
-    logout.className = "logout"
+    login.innerHTML = "logout"
     modeEdition()
   }
 
 logout.addEventListener("click", function(){
   document.location.href = "./login.html"
   localStorage.removeItem("token")
-  location.reload()
-})
+})*/
 
 

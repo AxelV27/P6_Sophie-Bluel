@@ -11,7 +11,7 @@ loginform.addEventListener("submit", async function(event){
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const logs = {email,password};
-    console.log(logs, "hello")
+    //console.log(logs, "hello")
     // Envoi des logs
     const response = await fetch(" http://localhost:5678/api/users/login",{
         method:"POST",

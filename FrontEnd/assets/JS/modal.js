@@ -14,6 +14,14 @@ for(let i = 0; i < openModal.length; i++){
 for(let i = 0; i < closeModal.length; i++){
     closeModal[i].addEventListener("click",function(){
         modal.style.display = "none"
+        modalRetour.click()
+    })
+
+    modal.addEventListener("click", function(event){
+        if(event.target === modal){
+        modal.style.display = "none"
+        modalRetour.click()
+        }
     })
 }
 
@@ -43,6 +51,9 @@ for(let i = 0; i < closeModal.length; i++){
                 },
             })
             console.log(work.id, "au revoir")
+            modaleGrid.innerHTML = ""
+            modaleGallerie()
+            gallerie()
         })
 
         modaleGrid.appendChild(elementModale)
@@ -121,8 +132,8 @@ async function addwork(){
 
     formdata.append("image", addprojetphotoinput.files[0])
     formdata.append("title", titreprojetadd.value)
-    formdata.append("category", categorieprojetadd)
-
+    formdata.append("category", categorieprojetadd.value)
+console.log(formdata)
     const reponseadd = await fetch("http://localhost:5678/api/works/", {
         method: "POST",
         headers: {
@@ -132,19 +143,23 @@ async function addwork(){
         body: formdata
 
     })
-
+ console.log(reponseadd)
     if(reponseadd.ok){
-        works.push(await reponseadd.json())
-
+        //works.push(await reponseadd.json())
+console.log("bonjour")
         modalRetour.click()
-        const gallerieModaleSection = document.querySelector("modal__gallery-grid")
-        const gallerieSection = document.querySelector(".gallery")
-        gallerieModaleSection.innerHTML = ""
-        gallerieSection.innerHTML = ""
-
+        const modaleGrid = document.querySelector(".modal__gallery-grid");
+    modaleGrid.innerHTML = "";
+     
+        //const gallerieModaleSection = document.querySelector("modal__gallery-grid")
+        //const gallerieSection = document.querySelector(".gallery")
+        //gallerieModaleSection.innerHTML = ""
+        //gallerieSection.innerHTML = "" 
+        
         // Régénération des galleries
-        modaleGallerie(works)
-        gallerie(works)
+        modaleGallerie()
+        gallerie()
+        modal.style.display = "none"
     }
 }
 
@@ -156,7 +171,7 @@ const bouttonValider = document.querySelector(".valider__form")
 bouttonValider.addEventListener("click", function(event){
     event.preventDefault()
     // Vérification de la validité du modal
-    if(addprojetphotoinput.checkValdity() && titreprojetadd.checkValdity() && categorieprojetadd.checkValdity() == true) {
+    if(addprojetphotoinput.checkValidity() && titreprojetadd.checkValidity() && categorieprojetadd.checkValidity() == true) {
         addwork()
     } else {
         return alert("Veuillez remplir tous les champs")
