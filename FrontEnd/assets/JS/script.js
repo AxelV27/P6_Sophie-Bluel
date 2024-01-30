@@ -68,12 +68,8 @@ async function gallerie(filterWorks = null) {
       gallerieElement.appendChild(imageElement);
       gallerieElement.appendChild(figcaptionElement);
 
-    }
-  }
-  
-  gallerie();
-
-  // Login/logout
+    } 
+    // Login/logout
 const login = localStorage.getItem("token")
 // Vérifie l'état de login
 const UtilisateurConnecte = login != null && login != undefined && login != ''
@@ -85,24 +81,19 @@ if(UtilisateurConnecte){
   logout.textContent = "logout"
   ModeEdition.style.display = "flex"
   const modifieButton = document.querySelector(".edition-mode")
+  filtrecategories.style.display = "none"
   modifieButton.style.display = "flex"
   logout.addEventListener('click',Deconnexion)
 }
+  }
+  
+  gallerie();
 
 // Fonction de déconnexion
 function Deconnexion(){
   localStorage.clear()
   window.location.reload()
 }
-  /*const login = document.querySelector(".login")
-  if(token){
-    login.innerHTML = "logout"
-    modeEdition()
-  }
-
-logout.addEventListener("click", function(){
-  document.location.href = "./login.html"
-  localStorage.removeItem("token")
-})*/
+  
 
 

@@ -3,7 +3,7 @@ const openModal = document.querySelectorAll(".open-modal")
 const closeModal = document.querySelectorAll(".modal-close-button")
 const modal = document.querySelector(".modal")
 const token = localStorage.getItem("token")
-console.log(token)
+//console.log(token)
 
 for(let i = 0; i < openModal.length; i++){
     openModal[i].addEventListener("click", function(){
@@ -50,7 +50,7 @@ for(let i = 0; i < closeModal.length; i++){
                     'Authorization': `Bearer ${token}`, // notice the Bearer before your token
                 },
             })
-            console.log(work.id, "au revoir")
+           //console.log(work.id, "au revoir")
             modaleGrid.innerHTML = ""
             modaleGallerie()
             gallerie()
@@ -133,7 +133,7 @@ async function addwork(){
     formdata.append("image", addprojetphotoinput.files[0])
     formdata.append("title", titreprojetadd.value)
     formdata.append("category", categorieprojetadd.value)
-console.log(formdata)
+ //console.log(formdata)
     const reponseadd = await fetch("http://localhost:5678/api/works/", {
         method: "POST",
         headers: {
@@ -143,19 +143,13 @@ console.log(formdata)
         body: formdata
 
     })
- console.log(reponseadd)
+ //console.log(reponseadd)
     if(reponseadd.ok){
-        //works.push(await reponseadd.json())
-console.log("bonjour")
+ //console.log("bonjour")
         modalRetour.click()
         const modaleGrid = document.querySelector(".modal__gallery-grid");
     modaleGrid.innerHTML = "";
-     
-        //const gallerieModaleSection = document.querySelector("modal__gallery-grid")
-        //const gallerieSection = document.querySelector(".gallery")
-        //gallerieModaleSection.innerHTML = ""
-        //gallerieSection.innerHTML = "" 
-        
+
         // Régénération des galleries
         modaleGallerie()
         gallerie()
