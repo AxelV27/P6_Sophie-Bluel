@@ -443,7 +443,7 @@ form select {
 	height: 100%;
 	font-family: 'Syne';
 	font-weight: 700;
-	font-size: 16px;
+	font-size: 15px;
 	padding: 10px 15px 10px 15px;
 	cursor: pointer;
 }
@@ -451,4 +451,99 @@ form select {
 .filtre__categories button:hover{
 	color: white;
 	background-color: #1D6154;
+}
+
+@media only screen and (max-width: 575px) {
+    body {
+        font-size: 16px;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+    }
+    section {
+        margin: 20px 0;
+    }
+    h1 {
+        font-size: 18px;
+    }
+    h1 > span {
+        font-size: 8px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    nav ul {
+        align-items: center;
+		gap: 30px;
+    }
+    nav li {
+        padding: 5px 0;
+        font-size: 1em;
+    }
+    li:hover {
+        color: #B1663C;
+    }
+    #introduction {
+        flex-direction: column;
+    }
+    #introduction img {
+        width: 100%;
+    }
+    #introduction h2 {
+        margin-bottom: 0.5em;
+		display: flex;
+		justify-content: center;
+    }
+    #introduction p {
+        margin-bottom: 0.5em;
+    }
+    #portfolio h2 {
+        font-size: 20px;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0;
+        grid-row-gap: 10px;
+    }
+    .gallery img {
+        height: auto;
+    }
+    #contact {
+        width: 100%;
+        margin: 0;
+    }
+    #contact h2 {
+        margin-bottom: 15px;
+    }
+    #contact form {
+        margin-top: 15px;
+    }
+    #contact input, #contact textarea {
+        height: 40px;
+        font-size: 1em;
+    }
+    input[type="submit"] {
+        width: 140px;
+        margin: 1em auto;
+    }
+	.modal-close{
+		width: 75%;
+	}
+
+	.return-and-close-modal{
+		width: 75%;
+	}
+
+    footer nav ul {
+        margin: 1em;
+    }
+    button {
+        padding: 8px 0;
+    }
+    nav img {
+        width: 18px;
+        height: 18px;
+    }
 }
